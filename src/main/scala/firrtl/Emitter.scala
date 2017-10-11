@@ -519,7 +519,7 @@ class VerilogEmitter extends SeqTransform with Emitter {
         val q = '"'.toString
 	val strx = s"""$q${VerilogStringLitHandler escape str}$q""" +:
                   (args flatMap (Seq("," , _)))
-        Seq("$fwrite(32'h80000002,", strx, ");")
+        Seq("$fwrite(32'h80000001,", strx, ");")
       }
 
       // Turn ports into Seq[String] and add to portdefs
